@@ -1,13 +1,13 @@
-CREATE TABLE users (
+CREATE TABLE usuarios_app (
     id SERIAL PRIMARY KEY,
     email TEXT UNIQUE NOT NULL,
-    password TEXT NOT NULL
+    senha_hash TEXT NOT NULL
 );
 
-CREATE TABLE investments (
+CREATE TABLE meus_ativos (
     id SERIAL PRIMARY KEY,
-    user_id INT REFERENCES users(id),
-    asset TEXT NOT NULL,
-    quantity FLOAT NOT NULL,
-    price FLOAT NOT NULL
+    id_usuario INT REFERENCES usuarios_app(id),
+    codigo_ativo TEXT NOT NULL,
+    qtd_cotas FLOAT NOT NULL,
+    preco_compra FLOAT NOT NULL
 );
