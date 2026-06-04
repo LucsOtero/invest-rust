@@ -2,26 +2,28 @@ use serde::{Serialize, Deserialize};
 use sqlx::FromRow;
 use askama::Template;
 
+// Estrutura que representa o usuário no banco de dados
 #[derive(Serialize, Deserialize, FromRow)]
-pub struct User {
+pub struct Usuario {
     pub id: i32,
     pub email: String,
-    pub password: String,
+    pub senha_hash: String,
 }
 
+// Representa cada ativo comprado na bolsa ou renda fixa
 #[derive(Serialize, Deserialize, FromRow, Clone)]
-pub struct Investment {
+pub struct Ativo {
     pub id: i32,
-    pub user_id: Option<i32>,
-    pub asset: String,
-    pub quantity: f64,
-    pub price: f64,
+    pub id_usuario: Option<i32>,
+    pub codigo_ativo: String,
+    pub qtd_cotas: f64,
+    pub preco_compra: f64,
 }
 
-// Estrutura que conecta o Rust com o arquivo HTML
+// Estrutura que liga o Rust com a nossa tela HTML
 #[derive(Template)]
 #[template(path = "dashboard.html")]
-pub struct DashboardTemplate {
-    pub total_value: f64,
-    pub investments: Vec<Investment>,
+pub struct TelaDashboard {
+    pub valor_total_carteira: f64,
+    pub lista_ativos: Vec<Ativo>,
 }
