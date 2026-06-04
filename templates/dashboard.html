@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Minha Carteira</title>
+    <meta charset="UTF-8">
+    <title>Minha Carteira Pessoal</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        h1 { color: #333; }
+        .total { color: #27ae60; font-size: 24px; font-weight: bold; }
+        .ativo-item { border-bottom: 1px solid #eee; padding: 10px 0; }
+        .codigo { font-weight: bold; color: #2980b9; }
+    </style>
 </head>
 <body>
-    <h1>Dashboard de Investimentos Inteligente</h1>
-    
-    <h3>Patrimônio Total: R$ {{ total_value }}</h3>
-    
-    <hr>
-    <h4>Seus Ativos:</h4>
-    <ul>
-        {% for inv in investments %}
-            <li>
-                <strong>{{ inv.asset }}</strong> | 
-                Quantidade: {{ inv.quantity }} | 
-                Preço: R$ {{ inv.price }}
-            </li>
-        {% else %}
-            <p>Nenhum investimento encontrado no banco de dados.</p>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Minha Carteira Inteligente</h1>
+        <p>Projeto final do Bootcamp Santander.</p>
+        
+        <p class="total">Patrimônio Acumulado: R$ {{ valor_total_carteira }}</p>
+        
+        <hr>
+        <h3>Meus Ativos</h3>
+        <div>
+            {% for ativo in lista_ativos %}
+                <div class="ativo-item">
+                    <span class="codigo">{{ ativo.codigo_ativo }}</span> | 
+                    Cotas: {{ ativo.qtd_cotas }} | 
+                    Preço Médio: R$ {{ ativo.preco_compra }}
+                </div>
+            {% else %}
+                <p>Nenhum ativo cadastrado ainda. Comece a investir!</p>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 </html>
