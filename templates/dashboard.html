@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Carteira</title>
+    <title>Minha Carteira</title>
 </head>
 <body>
-    <h1>Dashboard de Investimentos</h1>
-    <p>Total da carteira carregado via Rust backend</p>
+    <h1>Dashboard de Investimentos Inteligente</h1>
+    
+    <h3>Patrimônio Total: R$ {{ total_value }}</h3>
+    
+    <hr>
+    <h4>Seus Ativos:</h4>
+    <ul>
+        {% for inv in investments %}
+            <li>
+                <strong>{{ inv.asset }}</strong> | 
+                Quantidade: {{ inv.quantity }} | 
+                Preço: R$ {{ inv.price }}
+            </li>
+        {% else %}
+            <p>Nenhum investimento encontrado no banco de dados.</p>
+        {% endfor %}
+    </ul>
 </body>
 </html>
