@@ -1,17 +1,20 @@
-# Carteira de Investimentos Inteligente em Rust
+# Controle de Ativos Financeiros - API em Rust
 
-Projeto desenvolvido para o bootcamp Santander 2026.
+Olá! Este é o repositório do meu projeto final desenvolvido para o **Bootcamp Santander 2026**. 
 
-## Stack Utilizada
-- Rust
-- Axum (Framework Web)
-- PostgreSQL (Banco de Dados)
-- SQLx (Queries e Migrations)
-- JWT (Autenticação Segura)
-- Askama (Templates HTML)
+Meu objetivo aqui foi construir um backend seguro e rápido para gerenciar uma carteira de investimentos, colocando em prática o que aprendi sobre o ecossistema da linguagem Rust.
 
-## Funcionalidades Estruturadas
-- Login com geração de Token JWT
-- CRUD completo de investimentos (Listar, Criar, Deletar)
-- Inteligência matemática para cálculo de saldo total da carteira
-- Estrutura de rotas assíncronas de alta performance
+## 🛠️ Tecnologias e Ferramentas que utilizei
+- **Rust** como linguagem principal (focando em segurança de memória).
+- **Axum** para gerenciar as rotas da web.
+- **SQLx + PostgreSQL** para armazenar os dados dos investimentos.
+- **Askama** para conectar as lógicas do Rust direto no HTML.
+- **JSON Web Tokens (JWT)** para criar a camada de autenticação do usuário.
+
+## 💡 O que a aplicação faz?
+Eu criei uma arquitetura onde o usuário pode se autenticar (gerando um cookie de sessão seguro), adicionar novos ativos na sua carteira (como ações ou fundos imobiliários) e visualizar um painel que calcula automaticamente o patrimônio total investido buscando os dados direto do banco relacional.
+
+## 👨‍💻 Sobre mim
+Meu nome é [SEU NOME AQUI], sou apaixonado por tecnologia e estou buscando minha primeira oportunidade [OU "evoluir na carreira"] como desenvolvedor.
+- **LinkedIn:** [COLOQUE SEU LINK AQUI]
+- **Contato:** [SEU EMAIL AQUI]
