@@ -1,6 +1,6 @@
 # Controle de Ativos Financeiros - API em Rust
 
-Olá! Este é o repositório do meu projeto final desenvolvido para o **Bootcamp Santander 2026**. 
+Olá! Este é o repositório do meu projeto final. 
 
 Meu objetivo aqui foi construir um backend seguro e rápido para gerenciar uma carteira de investimentos, colocando em prática o que aprendi sobre o ecossistema da linguagem Rust.
 
